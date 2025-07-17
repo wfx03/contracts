@@ -2,11 +2,23 @@ syntax ="proto3";
 
 package auth;
 
-option go_package = "gorbach.sso.v1;sso";
+option go_package = "github.com/wfx03/contracts;authGrpc";
+
+import "google/api/annotations.proto";
 
 service Auth {
-    rpc Register (RegisterRequest) returns (RegisterResponese);
-    rpc Login (LoginRequest) returns (LoginResponese);
+    rpc Register (RegisterRequest) returns (RegisterResponese){
+        option (google.api.http) = {
+            post: "/id/register"
+            body: "*"
+        };
+    };
+    rpc Login (LoginRequest) returns (LoginResponese){
+    option (google.api.http) = {
+        post: "/id/login"
+        body: "*"
+    };
+    }
     rpc IsAdmin (IsAdminRequest) returns (IsAdminResponese);
 }
 
