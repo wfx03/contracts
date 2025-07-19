@@ -26,6 +26,7 @@ type ChangePasswordRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	NewPassword   string                 `protobuf:"bytes,1,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"`
 	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AppID         int32                  `protobuf:"varint,3,opt,name=appID,proto3" json:"appID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -70,6 +71,13 @@ func (x *ChangePasswordRequest) GetNewPassword() string {
 func (x *ChangePasswordRequest) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *ChangePasswordRequest) GetAppID() int32 {
+	if x != nil {
+		return x.AppID
 	}
 	return 0
 }
@@ -210,6 +218,7 @@ type DisplayTelephoneRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	NewNumber     string                 `protobuf:"bytes,1,opt,name=new_number,json=newNumber,proto3" json:"new_number,omitempty"`
 	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AppID         int32                  `protobuf:"varint,3,opt,name=appID,proto3" json:"appID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -254,6 +263,13 @@ func (x *DisplayTelephoneRequest) GetNewNumber() string {
 func (x *DisplayTelephoneRequest) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *DisplayTelephoneRequest) GetAppID() int32 {
+	if x != nil {
+		return x.AppID
 	}
 	return 0
 }
@@ -306,6 +322,7 @@ type DisplayEmailRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	NewEmail      string                 `protobuf:"bytes,1,opt,name=new_email,json=newEmail,proto3" json:"new_email,omitempty"`
 	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	AppID         int32                  `protobuf:"varint,3,opt,name=appID,proto3" json:"appID,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -350,6 +367,13 @@ func (x *DisplayEmailRequest) GetNewEmail() string {
 func (x *DisplayEmailRequest) GetUserId() int64 {
 	if x != nil {
 		return x.UserId
+	}
+	return 0
+}
+
+func (x *DisplayEmailRequest) GetAppID() int32 {
+	if x != nil {
+		return x.AppID
 	}
 	return 0
 }
@@ -690,25 +714,28 @@ var File_auth_authgrpc_proto protoreflect.FileDescriptor
 
 const file_auth_authgrpc_proto_rawDesc = "" +
 	"\n" +
-	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"S\n" +
+	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"i\n" +
 	"\x15ChangePasswordRequest\x12!\n" +
 	"\fnew_password\x18\x01 \x01(\tR\vnewPassword\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\x03R\x06userId\"3\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05appID\x18\x03 \x01(\x05R\x05appID\"3\n" +
 	"\x17ChangePasswordResponese\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\")\n" +
 	"\x0eAccountRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\"+\n" +
 	"\x10AccountResponese\x12\x17\n" +
-	"\ais_user\x18\x01 \x01(\bR\x06isUser\"Q\n" +
+	"\ais_user\x18\x01 \x01(\bR\x06isUser\"g\n" +
 	"\x17DisplayTelephoneRequest\x12\x1d\n" +
 	"\n" +
 	"new_number\x18\x01 \x01(\tR\tnewNumber\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\x03R\x06userId\"5\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05appID\x18\x03 \x01(\x05R\x05appID\"5\n" +
 	"\x19DisplayTelephoneResponese\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"K\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"a\n" +
 	"\x13DisplayEmailRequest\x12\x1b\n" +
 	"\tnew_email\x18\x01 \x01(\tR\bnewEmail\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\x03R\x06userId\"1\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x14\n" +
+	"\x05appID\x18\x03 \x01(\x05R\x05appID\"1\n" +
 	"\x15DisplayEmailResponese\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\"C\n" +
 	"\x0fRegisterRequest\x12\x14\n" +

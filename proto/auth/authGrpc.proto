@@ -53,6 +53,7 @@ service Auth {
 message ChangePasswordRequest{
     string new_password =1 ;
     int64 user_id = 2;
+    int32 appID =3;
 }
 
 message ChangePasswordResponese{
@@ -70,6 +71,7 @@ message AccountResponese{
 message DisplayTelephoneRequest{
     string new_number = 1;
     int64 user_id = 2;
+    int32 appID =3;
 }
 
 message DisplayTelephoneResponese{
@@ -79,6 +81,7 @@ message DisplayTelephoneResponese{
 message DisplayEmailRequest{
     string new_email =1;
     int64 user_id = 2;
+    int32 appID =3;
 }
 
 message DisplayEmailResponese{
