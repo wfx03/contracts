@@ -356,7 +356,7 @@ func (x *DisplayEmailRequest) GetEmail() string {
 
 type DisplayEmailResponese struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -391,11 +391,11 @@ func (*DisplayEmailResponese) Descriptor() ([]byte, []int) {
 	return file_auth_authgrpc_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *DisplayEmailResponese) GetUserId() int64 {
+func (x *DisplayEmailResponese) GetSuccess() bool {
 	if x != nil {
-		return x.UserId
+		return x.Success
 	}
-	return 0
+	return false
 }
 
 type RegisterRequest struct {
@@ -708,9 +708,9 @@ const file_auth_authgrpc_proto_rawDesc = "" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\"H\n" +
 	"\x13DisplayEmailRequest\x12\x1b\n" +
 	"\tnew_email\x18\x01 \x01(\tR\bnewEmail\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email\"0\n" +
-	"\x15DisplayEmailResponese\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\x03R\x06userId\"C\n" +
+	"\x05email\x18\x02 \x01(\tR\x05email\"1\n" +
+	"\x15DisplayEmailResponese\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"C\n" +
 	"\x0fRegisterRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\",\n" +
