@@ -24,7 +24,7 @@ const (
 
 type ChangePasswordRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Password      string                 `protobuf:"bytes,1,opt,name=password,proto3" json:"password,omitempty"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -59,11 +59,11 @@ func (*ChangePasswordRequest) Descriptor() ([]byte, []int) {
 	return file_auth_authgrpc_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ChangePasswordRequest) GetPassword() string {
+func (x *ChangePasswordRequest) GetUserId() int64 {
 	if x != nil {
-		return x.Password
+		return x.UserId
 	}
-	return ""
+	return 0
 }
 
 type ChangePasswordResponese struct {
@@ -199,10 +199,10 @@ func (x *AccountResponese) GetIsUser() bool {
 }
 
 type DisplayTelephoneRequest struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	NumberTelephone string                 `protobuf:"bytes,1,opt,name=numberTelephone,proto3" json:"numberTelephone,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *DisplayTelephoneRequest) Reset() {
@@ -235,11 +235,11 @@ func (*DisplayTelephoneRequest) Descriptor() ([]byte, []int) {
 	return file_auth_authgrpc_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *DisplayTelephoneRequest) GetNumberTelephone() string {
+func (x *DisplayTelephoneRequest) GetUserId() int64 {
 	if x != nil {
-		return x.NumberTelephone
+		return x.UserId
 	}
-	return ""
+	return 0
 }
 
 type DisplayTelephoneResponese struct {
@@ -332,7 +332,7 @@ func (x *DisplayEmailRequest) GetEmail() string {
 
 type DisplayEmailResponese struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -367,11 +367,11 @@ func (*DisplayEmailResponese) Descriptor() ([]byte, []int) {
 	return file_auth_authgrpc_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *DisplayEmailResponese) GetSuccess() bool {
+func (x *DisplayEmailResponese) GetUserId() int64 {
 	if x != nil {
-		return x.Success
+		return x.UserId
 	}
-	return false
+	return 0
 }
 
 type RegisterRequest struct {
@@ -666,23 +666,23 @@ var File_auth_authgrpc_proto protoreflect.FileDescriptor
 
 const file_auth_authgrpc_proto_rawDesc = "" +
 	"\n" +
-	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"3\n" +
-	"\x15ChangePasswordRequest\x12\x1a\n" +
-	"\bpassword\x18\x01 \x01(\tR\bpassword\"3\n" +
+	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"0\n" +
+	"\x15ChangePasswordRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\"3\n" +
 	"\x17ChangePasswordResponese\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\")\n" +
 	"\x0eAccountRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\"+\n" +
 	"\x10AccountResponese\x12\x17\n" +
-	"\ais_user\x18\x01 \x01(\bR\x06isUser\"C\n" +
-	"\x17DisplayTelephoneRequest\x12(\n" +
-	"\x0fnumberTelephone\x18\x01 \x01(\tR\x0fnumberTelephone\"5\n" +
+	"\ais_user\x18\x01 \x01(\bR\x06isUser\"2\n" +
+	"\x17DisplayTelephoneRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\"5\n" +
 	"\x19DisplayTelephoneResponese\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\"+\n" +
 	"\x13DisplayEmailRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\"1\n" +
-	"\x15DisplayEmailResponese\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"C\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"0\n" +
+	"\x15DisplayEmailResponese\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\"C\n" +
 	"\x0fRegisterRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\",\n" +
