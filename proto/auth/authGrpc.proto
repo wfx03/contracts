@@ -78,7 +78,7 @@ message DisplayTelephoneResponese{
 
 message DisplayEmailRequest{
     string new_email =1;
-    string email = 2;
+    int64 user_id = 2;
 }
 
 message DisplayEmailResponese{
