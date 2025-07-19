@@ -7,13 +7,12 @@
 package authGrpc
 
 import (
-	reflect "reflect"
-	sync "sync"
-	unsafe "unsafe"
-
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	reflect "reflect"
+	sync "sync"
+	unsafe "unsafe"
 )
 
 const (
@@ -22,6 +21,358 @@ const (
 	// Verify that runtime/protoimpl is sufficiently up-to-date.
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
+
+type ChangePasswordRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Password      string                 `protobuf:"bytes,1,opt,name=password,proto3" json:"password,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChangePasswordRequest) Reset() {
+	*x = ChangePasswordRequest{}
+	mi := &file_auth_authgrpc_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChangePasswordRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChangePasswordRequest) ProtoMessage() {}
+
+func (x *ChangePasswordRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChangePasswordRequest.ProtoReflect.Descriptor instead.
+func (*ChangePasswordRequest) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *ChangePasswordRequest) GetPassword() string {
+	if x != nil {
+		return x.Password
+	}
+	return ""
+}
+
+type ChangePasswordResponese struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChangePasswordResponese) Reset() {
+	*x = ChangePasswordResponese{}
+	mi := &file_auth_authgrpc_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChangePasswordResponese) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChangePasswordResponese) ProtoMessage() {}
+
+func (x *ChangePasswordResponese) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChangePasswordResponese.ProtoReflect.Descriptor instead.
+func (*ChangePasswordResponese) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ChangePasswordResponese) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+type AccountRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	UserId        int64                  `protobuf:"varint,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AccountRequest) Reset() {
+	*x = AccountRequest{}
+	mi := &file_auth_authgrpc_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AccountRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AccountRequest) ProtoMessage() {}
+
+func (x *AccountRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AccountRequest.ProtoReflect.Descriptor instead.
+func (*AccountRequest) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *AccountRequest) GetUserId() int64 {
+	if x != nil {
+		return x.UserId
+	}
+	return 0
+}
+
+type AccountResponese struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	IsUser        bool                   `protobuf:"varint,1,opt,name=is_user,json=isUser,proto3" json:"is_user,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AccountResponese) Reset() {
+	*x = AccountResponese{}
+	mi := &file_auth_authgrpc_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AccountResponese) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AccountResponese) ProtoMessage() {}
+
+func (x *AccountResponese) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AccountResponese.ProtoReflect.Descriptor instead.
+func (*AccountResponese) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *AccountResponese) GetIsUser() bool {
+	if x != nil {
+		return x.IsUser
+	}
+	return false
+}
+
+type DisplayTelephoneRequest struct {
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	NumberTelephone string                 `protobuf:"bytes,1,opt,name=numberTelephone,proto3" json:"numberTelephone,omitempty"`
+	unknownFields   protoimpl.UnknownFields
+	sizeCache       protoimpl.SizeCache
+}
+
+func (x *DisplayTelephoneRequest) Reset() {
+	*x = DisplayTelephoneRequest{}
+	mi := &file_auth_authgrpc_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DisplayTelephoneRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisplayTelephoneRequest) ProtoMessage() {}
+
+func (x *DisplayTelephoneRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisplayTelephoneRequest.ProtoReflect.Descriptor instead.
+func (*DisplayTelephoneRequest) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *DisplayTelephoneRequest) GetNumberTelephone() string {
+	if x != nil {
+		return x.NumberTelephone
+	}
+	return ""
+}
+
+type DisplayTelephoneResponese struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DisplayTelephoneResponese) Reset() {
+	*x = DisplayTelephoneResponese{}
+	mi := &file_auth_authgrpc_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DisplayTelephoneResponese) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisplayTelephoneResponese) ProtoMessage() {}
+
+func (x *DisplayTelephoneResponese) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisplayTelephoneResponese.ProtoReflect.Descriptor instead.
+func (*DisplayTelephoneResponese) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *DisplayTelephoneResponese) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
+
+type DisplayEmailRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DisplayEmailRequest) Reset() {
+	*x = DisplayEmailRequest{}
+	mi := &file_auth_authgrpc_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DisplayEmailRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisplayEmailRequest) ProtoMessage() {}
+
+func (x *DisplayEmailRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisplayEmailRequest.ProtoReflect.Descriptor instead.
+func (*DisplayEmailRequest) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DisplayEmailRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type DisplayEmailResponese struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DisplayEmailResponese) Reset() {
+	*x = DisplayEmailResponese{}
+	mi := &file_auth_authgrpc_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DisplayEmailResponese) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DisplayEmailResponese) ProtoMessage() {}
+
+func (x *DisplayEmailResponese) ProtoReflect() protoreflect.Message {
+	mi := &file_auth_authgrpc_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DisplayEmailResponese.ProtoReflect.Descriptor instead.
+func (*DisplayEmailResponese) Descriptor() ([]byte, []int) {
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *DisplayEmailResponese) GetSuccess() bool {
+	if x != nil {
+		return x.Success
+	}
+	return false
+}
 
 type RegisterRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -33,7 +384,7 @@ type RegisterRequest struct {
 
 func (x *RegisterRequest) Reset() {
 	*x = RegisterRequest{}
-	mi := &file_auth_authgrpc_proto_msgTypes[0]
+	mi := &file_auth_authgrpc_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -45,7 +396,7 @@ func (x *RegisterRequest) String() string {
 func (*RegisterRequest) ProtoMessage() {}
 
 func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_authgrpc_proto_msgTypes[0]
+	mi := &file_auth_authgrpc_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -58,7 +409,7 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_auth_authgrpc_proto_rawDescGZIP(), []int{0}
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *RegisterRequest) GetEmail() string {
@@ -84,7 +435,7 @@ type RegisterResponese struct {
 
 func (x *RegisterResponese) Reset() {
 	*x = RegisterResponese{}
-	mi := &file_auth_authgrpc_proto_msgTypes[1]
+	mi := &file_auth_authgrpc_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +447,7 @@ func (x *RegisterResponese) String() string {
 func (*RegisterResponese) ProtoMessage() {}
 
 func (x *RegisterResponese) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_authgrpc_proto_msgTypes[1]
+	mi := &file_auth_authgrpc_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +460,7 @@ func (x *RegisterResponese) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterResponese.ProtoReflect.Descriptor instead.
 func (*RegisterResponese) Descriptor() ([]byte, []int) {
-	return file_auth_authgrpc_proto_rawDescGZIP(), []int{1}
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *RegisterResponese) GetUserId() int64 {
@@ -130,7 +481,7 @@ type LoginRequest struct {
 
 func (x *LoginRequest) Reset() {
 	*x = LoginRequest{}
-	mi := &file_auth_authgrpc_proto_msgTypes[2]
+	mi := &file_auth_authgrpc_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -142,7 +493,7 @@ func (x *LoginRequest) String() string {
 func (*LoginRequest) ProtoMessage() {}
 
 func (x *LoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_authgrpc_proto_msgTypes[2]
+	mi := &file_auth_authgrpc_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -155,7 +506,7 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_auth_authgrpc_proto_rawDescGZIP(), []int{2}
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *LoginRequest) GetEmail() string {
@@ -188,7 +539,7 @@ type LoginResponese struct {
 
 func (x *LoginResponese) Reset() {
 	*x = LoginResponese{}
-	mi := &file_auth_authgrpc_proto_msgTypes[3]
+	mi := &file_auth_authgrpc_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -200,7 +551,7 @@ func (x *LoginResponese) String() string {
 func (*LoginResponese) ProtoMessage() {}
 
 func (x *LoginResponese) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_authgrpc_proto_msgTypes[3]
+	mi := &file_auth_authgrpc_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -213,7 +564,7 @@ func (x *LoginResponese) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginResponese.ProtoReflect.Descriptor instead.
 func (*LoginResponese) Descriptor() ([]byte, []int) {
-	return file_auth_authgrpc_proto_rawDescGZIP(), []int{3}
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *LoginResponese) GetToken() string {
@@ -232,7 +583,7 @@ type IsAdminRequest struct {
 
 func (x *IsAdminRequest) Reset() {
 	*x = IsAdminRequest{}
-	mi := &file_auth_authgrpc_proto_msgTypes[4]
+	mi := &file_auth_authgrpc_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -244,7 +595,7 @@ func (x *IsAdminRequest) String() string {
 func (*IsAdminRequest) ProtoMessage() {}
 
 func (x *IsAdminRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_authgrpc_proto_msgTypes[4]
+	mi := &file_auth_authgrpc_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -257,7 +608,7 @@ func (x *IsAdminRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IsAdminRequest.ProtoReflect.Descriptor instead.
 func (*IsAdminRequest) Descriptor() ([]byte, []int) {
-	return file_auth_authgrpc_proto_rawDescGZIP(), []int{4}
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *IsAdminRequest) GetUserId() int64 {
@@ -276,7 +627,7 @@ type IsAdminResponese struct {
 
 func (x *IsAdminResponese) Reset() {
 	*x = IsAdminResponese{}
-	mi := &file_auth_authgrpc_proto_msgTypes[5]
+	mi := &file_auth_authgrpc_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -288,7 +639,7 @@ func (x *IsAdminResponese) String() string {
 func (*IsAdminResponese) ProtoMessage() {}
 
 func (x *IsAdminResponese) ProtoReflect() protoreflect.Message {
-	mi := &file_auth_authgrpc_proto_msgTypes[5]
+	mi := &file_auth_authgrpc_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -301,7 +652,7 @@ func (x *IsAdminResponese) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IsAdminResponese.ProtoReflect.Descriptor instead.
 func (*IsAdminResponese) Descriptor() ([]byte, []int) {
-	return file_auth_authgrpc_proto_rawDescGZIP(), []int{5}
+	return file_auth_authgrpc_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *IsAdminResponese) GetIsAdmin() bool {
@@ -315,7 +666,23 @@ var File_auth_authgrpc_proto protoreflect.FileDescriptor
 
 const file_auth_authgrpc_proto_rawDesc = "" +
 	"\n" +
-	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"C\n" +
+	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"3\n" +
+	"\x15ChangePasswordRequest\x12\x1a\n" +
+	"\bpassword\x18\x01 \x01(\tR\bpassword\"3\n" +
+	"\x17ChangePasswordResponese\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\")\n" +
+	"\x0eAccountRequest\x12\x17\n" +
+	"\auser_id\x18\x01 \x01(\x03R\x06userId\"+\n" +
+	"\x10AccountResponese\x12\x17\n" +
+	"\ais_user\x18\x01 \x01(\bR\x06isUser\"C\n" +
+	"\x17DisplayTelephoneRequest\x12(\n" +
+	"\x0fnumberTelephone\x18\x01 \x01(\tR\x0fnumberTelephone\"5\n" +
+	"\x19DisplayTelephoneResponese\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"+\n" +
+	"\x13DisplayEmailRequest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"1\n" +
+	"\x15DisplayEmailResponese\x12\x18\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"C\n" +
 	"\x0fRegisterRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\",\n" +
@@ -330,10 +697,14 @@ const file_auth_authgrpc_proto_rawDesc = "" +
 	"\x0eIsAdminRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\"-\n" +
 	"\x10IsAdminResponese\x12\x19\n" +
-	"\bis_admin\x18\x01 \x01(\bR\aisAdmin2\xdd\x01\n" +
+	"\bis_admin\x18\x01 \x01(\bR\aisAdmin2\xc6\x05\n" +
 	"\x04Auth\x12S\n" +
 	"\bRegister\x12\x15.auth.RegisterRequest\x1a\x17.auth.RegisterResponese\"\x17\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/id/register\x12G\n" +
-	"\x05Login\x12\x12.auth.LoginRequest\x1a\x14.auth.LoginResponese\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/id/login\x127\n" +
+	"\x05Login\x12\x12.auth.LoginRequest\x1a\x14.auth.LoginResponese\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/id/login\x12\x7f\n" +
+	"\x12UpdateDisplayEmail\x12\x19.auth.DisplayEmailRequest\x1a\x1b.auth.DisplayEmailResponese\"1\x82\xd3\xe4\x93\x02+:\x01*\x1a&/account/personal/update-display-email\x12\x88\x01\n" +
+	"\x0fUpdateTelephone\x12\x1d.auth.DisplayTelephoneRequest\x1a\x1f.auth.DisplayTelephoneResponese\"5\x82\xd3\xe4\x93\x02/:\x01*\x1a*/account/personal/update-display-telephone\x12z\n" +
+	"\x0eChangePassword\x12\x1b.auth.ChangePasswordRequest\x1a\x1d.auth.ChangePasswordResponese\",\x82\xd3\xe4\x93\x02&:\x01*\x1a!/account/personal/change-password\x12_\n" +
+	"\rDeleteAccount\x12\x14.auth.AccountRequest\x1a\x16.auth.AccountResponese\" \x82\xd3\xe4\x93\x02\x1a*\x18/account/personal/delete\x127\n" +
 	"\aIsAdmin\x12\x14.auth.IsAdminRequest\x1a\x16.auth.IsAdminResponeseB%Z#github.com/wfx03/contracts;authGrpcb\x06proto3"
 
 var (
@@ -348,27 +719,43 @@ func file_auth_authgrpc_proto_rawDescGZIP() []byte {
 	return file_auth_authgrpc_proto_rawDescData
 }
 
-var file_auth_authgrpc_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_auth_authgrpc_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_auth_authgrpc_proto_goTypes = []any{
-	(*RegisterRequest)(nil),   // 0: auth.RegisterRequest
-	(*RegisterResponese)(nil), // 1: auth.RegisterResponese
-	(*LoginRequest)(nil),      // 2: auth.LoginRequest
-	(*LoginResponese)(nil),    // 3: auth.LoginResponese
-	(*IsAdminRequest)(nil),    // 4: auth.IsAdminRequest
-	(*IsAdminResponese)(nil),  // 5: auth.IsAdminResponese
+	(*ChangePasswordRequest)(nil),     // 0: auth.ChangePasswordRequest
+	(*ChangePasswordResponese)(nil),   // 1: auth.ChangePasswordResponese
+	(*AccountRequest)(nil),            // 2: auth.AccountRequest
+	(*AccountResponese)(nil),          // 3: auth.AccountResponese
+	(*DisplayTelephoneRequest)(nil),   // 4: auth.DisplayTelephoneRequest
+	(*DisplayTelephoneResponese)(nil), // 5: auth.DisplayTelephoneResponese
+	(*DisplayEmailRequest)(nil),       // 6: auth.DisplayEmailRequest
+	(*DisplayEmailResponese)(nil),     // 7: auth.DisplayEmailResponese
+	(*RegisterRequest)(nil),           // 8: auth.RegisterRequest
+	(*RegisterResponese)(nil),         // 9: auth.RegisterResponese
+	(*LoginRequest)(nil),              // 10: auth.LoginRequest
+	(*LoginResponese)(nil),            // 11: auth.LoginResponese
+	(*IsAdminRequest)(nil),            // 12: auth.IsAdminRequest
+	(*IsAdminResponese)(nil),          // 13: auth.IsAdminResponese
 }
 var file_auth_authgrpc_proto_depIdxs = []int32{
-	0, // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
-	2, // 1: auth.Auth.Login:input_type -> auth.LoginRequest
-	4, // 2: auth.Auth.IsAdmin:input_type -> auth.IsAdminRequest
-	1, // 3: auth.Auth.Register:output_type -> auth.RegisterResponese
-	3, // 4: auth.Auth.Login:output_type -> auth.LoginResponese
-	5, // 5: auth.Auth.IsAdmin:output_type -> auth.IsAdminResponese
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	8,  // 0: auth.Auth.Register:input_type -> auth.RegisterRequest
+	10, // 1: auth.Auth.Login:input_type -> auth.LoginRequest
+	6,  // 2: auth.Auth.UpdateDisplayEmail:input_type -> auth.DisplayEmailRequest
+	4,  // 3: auth.Auth.UpdateTelephone:input_type -> auth.DisplayTelephoneRequest
+	0,  // 4: auth.Auth.ChangePassword:input_type -> auth.ChangePasswordRequest
+	2,  // 5: auth.Auth.DeleteAccount:input_type -> auth.AccountRequest
+	12, // 6: auth.Auth.IsAdmin:input_type -> auth.IsAdminRequest
+	9,  // 7: auth.Auth.Register:output_type -> auth.RegisterResponese
+	11, // 8: auth.Auth.Login:output_type -> auth.LoginResponese
+	7,  // 9: auth.Auth.UpdateDisplayEmail:output_type -> auth.DisplayEmailResponese
+	5,  // 10: auth.Auth.UpdateTelephone:output_type -> auth.DisplayTelephoneResponese
+	1,  // 11: auth.Auth.ChangePassword:output_type -> auth.ChangePasswordResponese
+	3,  // 12: auth.Auth.DeleteAccount:output_type -> auth.AccountResponese
+	13, // 13: auth.Auth.IsAdmin:output_type -> auth.IsAdminResponese
+	7,  // [7:14] is the sub-list for method output_type
+	0,  // [0:7] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_auth_authgrpc_proto_init() }
@@ -382,7 +769,7 @@ func file_auth_authgrpc_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_auth_authgrpc_proto_rawDesc), len(file_auth_authgrpc_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
