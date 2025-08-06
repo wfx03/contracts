@@ -25,7 +25,8 @@ const (
 type ChangePasswordRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	NewPassword   string                 `protobuf:"bytes,1,opt,name=new_password,json=newPassword,proto3" json:"new_password,omitempty"`
-	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	CheckPassword string                 `protobuf:"bytes,2,opt,name=check_password,json=checkPassword,proto3" json:"check_password,omitempty"`
+	OldPasswaord  string                 `protobuf:"bytes,5,opt,name=old_passwaord,json=oldPasswaord,proto3" json:"old_passwaord,omitempty"`
 	UserId        int64                  `protobuf:"varint,3,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	AppID         int32                  `protobuf:"varint,4,opt,name=appID,proto3" json:"appID,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -69,9 +70,16 @@ func (x *ChangePasswordRequest) GetNewPassword() string {
 	return ""
 }
 
-func (x *ChangePasswordRequest) GetPassword() string {
+func (x *ChangePasswordRequest) GetCheckPassword() string {
 	if x != nil {
-		return x.Password
+		return x.CheckPassword
+	}
+	return ""
+}
+
+func (x *ChangePasswordRequest) GetOldPasswaord() string {
+	if x != nil {
+		return x.OldPasswaord
 	}
 	return ""
 }
@@ -226,7 +234,7 @@ type DisplayTelephoneRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	NewNumber     string                 `protobuf:"bytes,1,opt,name=new_number,json=newNumber,proto3" json:"new_number,omitempty"`
 	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	AppID         int32                  `protobuf:"varint,3,opt,name=appID,proto3" json:"appID,omitempty"`
+	AppId         int32                  `protobuf:"varint,3,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -275,9 +283,9 @@ func (x *DisplayTelephoneRequest) GetUserId() int64 {
 	return 0
 }
 
-func (x *DisplayTelephoneRequest) GetAppID() int32 {
+func (x *DisplayTelephoneRequest) GetAppId() int32 {
 	if x != nil {
-		return x.AppID
+		return x.AppId
 	}
 	return 0
 }
@@ -330,7 +338,7 @@ type DisplayEmailRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	NewEmail      string                 `protobuf:"bytes,1,opt,name=new_email,json=newEmail,proto3" json:"new_email,omitempty"`
 	UserId        int64                  `protobuf:"varint,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	AppID         int32                  `protobuf:"varint,3,opt,name=appID,proto3" json:"appID,omitempty"`
+	AppId         int32                  `protobuf:"varint,3,opt,name=app_id,json=appId,proto3" json:"app_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -379,9 +387,9 @@ func (x *DisplayEmailRequest) GetUserId() int64 {
 	return 0
 }
 
-func (x *DisplayEmailRequest) GetAppID() int32 {
+func (x *DisplayEmailRequest) GetAppId() int32 {
 	if x != nil {
-		return x.AppID
+		return x.AppId
 	}
 	return 0
 }
@@ -722,10 +730,11 @@ var File_auth_authgrpc_proto protoreflect.FileDescriptor
 
 const file_auth_authgrpc_proto_rawDesc = "" +
 	"\n" +
-	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"\x85\x01\n" +
+	"\x13auth/authgrpc.proto\x12\x04auth\x1a\x1cgoogle/api/annotations.proto\"\xb5\x01\n" +
 	"\x15ChangePasswordRequest\x12!\n" +
-	"\fnew_password\x18\x01 \x01(\tR\vnewPassword\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x17\n" +
+	"\fnew_password\x18\x01 \x01(\tR\vnewPassword\x12%\n" +
+	"\x0echeck_password\x18\x02 \x01(\tR\rcheckPassword\x12#\n" +
+	"\rold_passwaord\x18\x05 \x01(\tR\foldPasswaord\x12\x17\n" +
 	"\auser_id\x18\x03 \x01(\x03R\x06userId\x12\x14\n" +
 	"\x05appID\x18\x04 \x01(\x05R\x05appID\"3\n" +
 	"\x17ChangePasswordResponese\x12\x18\n" +
@@ -733,18 +742,18 @@ const file_auth_authgrpc_proto_rawDesc = "" +
 	"\x0eAccountRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\x03R\x06userId\"+\n" +
 	"\x10AccountResponese\x12\x17\n" +
-	"\ais_user\x18\x01 \x01(\bR\x06isUser\"g\n" +
+	"\ais_user\x18\x01 \x01(\bR\x06isUser\"h\n" +
 	"\x17DisplayTelephoneRequest\x12\x1d\n" +
 	"\n" +
 	"new_number\x18\x01 \x01(\tR\tnewNumber\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x14\n" +
-	"\x05appID\x18\x03 \x01(\x05R\x05appID\"5\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x15\n" +
+	"\x06app_id\x18\x03 \x01(\x05R\x05appId\"5\n" +
 	"\x19DisplayTelephoneResponese\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"a\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"b\n" +
 	"\x13DisplayEmailRequest\x12\x1b\n" +
 	"\tnew_email\x18\x01 \x01(\tR\bnewEmail\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x14\n" +
-	"\x05appID\x18\x03 \x01(\x05R\x05appID\"1\n" +
+	"\auser_id\x18\x02 \x01(\x03R\x06userId\x12\x15\n" +
+	"\x06app_id\x18\x03 \x01(\x05R\x05appId\"1\n" +
 	"\x15DisplayEmailResponese\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess\"C\n" +
 	"\x0fRegisterRequest\x12\x14\n" +
